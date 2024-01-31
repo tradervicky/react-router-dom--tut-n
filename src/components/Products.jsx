@@ -1,4 +1,5 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import ProductCard from './ProductCard';
 
 
@@ -9,7 +10,7 @@ const Products = () => {
         try {
           const response = await axios.get("https://dummyjson.com/products");
           setData(response?.data); 
-          console.log(response.data);
+          console.log(response?.data);
         } catch (err) {
           console.log(err);
         }
@@ -22,7 +23,7 @@ const Products = () => {
     <div className='grid grid-cols-4'>
     {data &&
    data.products?.map((item, index) => (
-     <ProductCard key={index} image={item.image} fname={item.firstName} lname={item.lastName} email={item.email} address={item.address.address} />
+     <ProductCard key={index} image={item.thumbnail} price={item.price} brand={item.brand} title={item.title} description={item.description}/>
    ))}
      
      
