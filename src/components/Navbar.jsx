@@ -1,27 +1,21 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
-    const navi = useNavigate();
 
-const handleContacts = ()=>{
-    navi('/contacts')
-}
-const handleServices = ()=>{
-    navi('/services')
-}
   return (
-    <div>
-        <ul style={{display:"flex", cursor:"pointer", justifyContent:"space-evenly"}}>
-           <li onClick={()=>navi('/')}>Home</li>
-            <li onClick={()=>navi('/about')}>About</li>
-            <li onClick={handleContacts}>Contacts</li>
-            <li onClick={handleServices}>Services</li>
-           {/* <Link to={'/'}><li>Home</li></Link> 
-            <li><Link to='/about'>About</Link></li>
-            <li><Link to='/contacts'>Contacts</Link></li>
-            <li><Link to='/services'>Services</Link></li> */}
-        </ul>
+    <div className='h-16 bg-gray-100 flex justify-between px-20 items-center shadow-lg'>
+      <div><h1 className='text-3xl font-bold text-blue-950 cursor-pointer'>Logo</h1></div>
+<div>
+<ul className='flex gap-6'>
+        <li className='text-lg font-medium text-blue-950 hover:blue cursor-pointer'>Home</li>
+        <li className='text-lg font-medium text-blue-950 hover:blue cursor-pointer'>Product</li>
+        <li className='text-lg font-medium text-blue-950 hover:blue cursor-pointer'>About Us</li>
+        <li className='text-lg font-medium text-blue-950 hover:blue cursor-pointer'>Contact Us</li>
+      </ul>
+</div>
+
+<div><button className='px-4 py-2 bg-blue-950 text-white text-lg font-medium rounded-lg'>Login</button></div>
+      
     </div>
   )
 }
